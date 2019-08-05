@@ -11,7 +11,7 @@ print("[INFO] starting video stream...")
 #vs = VideoStream(src="rtsp://192.168.19.12:8554/unicast").start()
 #vs = cv2.VideoCapture("rtsp://192.168.18.138:8554/unicast")
 #vs = cv2.VideoCapture(0)
-vs = VideoStream(src=0).start()
+#vs = VideoStream(src=0).start()
 time.sleep(2.0)
 
 # start the FPS throughput estimator
@@ -21,11 +21,19 @@ tic = time.time()
 
 while True:
     #ssize, frame = vs.read()
-    frame = vs.read()
+    #frame = vs.read()
+
+    frame = cv2.imread("screen.png")
 
     print(type(frame))
 
     #frame_pure = copy.copy(frame)
+
+    cv2.namedWindow("Frame", cv2.WINDOW_KEEPRATIO)
+
+    cv2.namedWindow("Frame", cv2.WINDOW_KEEPRATIO)
+    cv2.setWindowProperty("Frame", cv2.WND_PROP_ASPECT_RATIO, cv2.WINDOW_KEEPRATIO)
+    cv2.setWindowProperty("Frame", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 
     cv2.imshow("Frame", frame)
 
