@@ -1,6 +1,4 @@
 import socket
-import threading
-import cv2
 
 
 
@@ -20,9 +18,6 @@ print("Connected with " + str(address_client))
 text_display = ""
 
 while True:
-    frame = cv2.imread("screen.png")
-
-    key = cv2.waitKey(1) & 0xFF
 
     try:
         data = sock_client.recv(32)
@@ -32,15 +27,5 @@ while True:
     if data != "":
         print(str(data.decode("utf-8")))
         text_display = str(data.decode("utf-8"))
-
-    #cv2.putText(frame, text_display, (30, 30), cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 255, 0), 2)
-
-    cv2.namedWindow("Frame", cv2.WINDOW_KEEPRATIO)
-    cv2.setWindowProperty("Frame", cv2.WND_PROP_ASPECT_RATIO, cv2.WINDOW_KEEPRATIO)
-    cv2.setWindowProperty("Frame", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
-
-    cv2.imshow("Frame", frame)
-
-    # if the `q` key was pressed, break from the loop
-    if key == ord("q"):
-        break
+        with open('display_text.txt', 'w') as f:
+            f.write("%s\n" % text_display)
