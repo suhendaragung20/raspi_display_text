@@ -41,7 +41,7 @@ def main():
         cv2.setWindowProperty("Frame", cv2.WND_PROP_ASPECT_RATIO, cv2.WINDOW_KEEPRATIO)
         cv2.setWindowProperty("Frame", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 
-        cv2.imshow("text", frame)
+        cv2.imshow("Frame", frame)
 
         # if the `q` key was pressed, break from the loop
         if key == ord("q"):
