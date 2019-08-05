@@ -27,5 +27,8 @@ while True:
     if data != "":
         print(str(data.decode("utf-8")))
         text_display = str(data.decode("utf-8"))
-        with open('display_text.txt', 'w') as f:
-            f.write("%s\n" % text_display)
+
+        f = open('display_text.txt', "w+")
+        for i in range(1):
+            f.write(text_display)
+        f.close()
