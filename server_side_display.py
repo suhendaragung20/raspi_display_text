@@ -9,9 +9,14 @@ while True:
 
     key = cv2.waitKey(1) & 0xFF
 
-    file_text = open("display_text.txt")
-    for line in file_text:
-        text_display = line.strip().split()
+    try:
+        file_text = open("display_text.txt")
+        for line in file_text:
+            text_display = line.strip().split()
+    except KeyboardInterrupt:
+        break
+    except:
+        continue
 
     cv2.putText(frame, text_display, (30, 30), cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 255, 0), 2)
 
