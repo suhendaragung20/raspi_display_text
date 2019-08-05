@@ -64,6 +64,8 @@ def main():
     frame = cv2.imread("screen.png")
     cv2.imshow("text display", frame)
 
+    print("Display Screen")
+
     # Create new server socket
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     sock.bind((host, port))
