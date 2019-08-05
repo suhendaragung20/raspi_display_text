@@ -1,5 +1,6 @@
 import socket
 import threading
+import cv2
 
 # Variables for holding information about connections
 connections = []
@@ -28,6 +29,7 @@ class Client(threading.Thread):
     # .decode is used to convert the byte data into a printable string
     def run(self):
         while self.signal:
+            frame = cv2.imread("screen.png")
             try:
                 data = self.socket.recv(32)
             except:
@@ -40,6 +42,7 @@ class Client(threading.Thread):
                 for client in connections:
                     if client.id != self.id:
                         client.socket.sendall(data)
+                cv2.imshow("text display", frame)
 
 
 # Wait for new connections
