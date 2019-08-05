@@ -61,6 +61,9 @@ def main():
     host = "192.168.43.150"
     port = 60000
 
+    frame = cv2.imread("screen.png")
+    cv2.imshow("text display", frame)
+
     # Create new server socket
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     sock.bind((host, port))
