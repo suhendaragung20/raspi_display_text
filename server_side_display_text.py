@@ -62,7 +62,14 @@ def main():
     port = 60000
 
     frame = cv2.imread("screen.png")
-    cv2.imshow("text display", frame)
+    cv2.namedWindow("Frame", cv2.WINDOW_KEEPRATIO)
+
+    cv2.namedWindow("Frame", cv2.WINDOW_KEEPRATIO)
+    cv2.setWindowProperty("Frame", cv2.WND_PROP_ASPECT_RATIO, cv2.WINDOW_KEEPRATIO)
+    cv2.setWindowProperty("Frame", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+
+    # show the output frame
+    cv2.imshow("Frame", frame)
 
     print("Display Screen")
 
