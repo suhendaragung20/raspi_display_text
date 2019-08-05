@@ -19,5 +19,8 @@ except:
 #Send data to server
 #str.encode is used to turn the string message into bytes so it can be sent across the network
 while True:
-    message = input()
-    sock.sendall(str.encode(message))
+    try:
+        message = input()
+        sock.sendall(str.encode(message))
+    except:
+        break
