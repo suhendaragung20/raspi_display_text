@@ -13,6 +13,7 @@ while True:
         file_text = open("display_text.txt")
         for line in file_text:
             text_display = line.strip().split()
+            text_display = text_display[0]
     except KeyboardInterrupt:
         break
     except:
