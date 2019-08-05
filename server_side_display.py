@@ -19,7 +19,7 @@ while True:
     except:
         continue
 
-    cv2.putText(frame, text_display, (30, 30), cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 255, 0), 2)
+    cv2.putText(frame, text_display, (30, 300), cv2.FONT_HERSHEY_SIMPLEX, 15, (0, 255, 0), 2)
 
     cv2.namedWindow("Frame", cv2.WINDOW_KEEPRATIO)
     cv2.setWindowProperty("Frame", cv2.WND_PROP_ASPECT_RATIO, cv2.WINDOW_KEEPRATIO)
