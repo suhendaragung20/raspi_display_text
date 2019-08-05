@@ -16,8 +16,15 @@ def main():
 
     sock_client, address_client = sock.accept()
 
+    print("Connected with " + str(address_client))
+
+    text_display = ""
+
     while True:
         frame = cv2.imread("screen.png")
+
+        key = cv2.waitKey(1) & 0xFF
+
         try:
             data = sock_client.recv(32)
         except:
@@ -25,7 +32,20 @@ def main():
             break
         if data != "":
             print(str(data.decode("utf-8")))
-            cv2.imshow("text display", frame)
+            text_display = str(data.decode("utf-8"))
+
+        cv2.putText(frame, text_display, (30, 30),
+                    cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 255, 0), 2)
+
+        cv2.namedWindow("Frame", cv2.WINDOW_KEEPRATIO)
+        cv2.setWindowProperty("Frame", cv2.WND_PROP_ASPECT_RATIO, cv2.WINDOW_KEEPRATIO)
+        cv2.setWindowProperty("Frame", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+
+        cv2.imshow("text", frame)
+
+        # if the `q` key was pressed, break from the loop
+        if key == ord("q"):
+            break
 
 
 main()
