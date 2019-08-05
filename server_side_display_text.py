@@ -34,8 +34,7 @@ def main():
             print(str(data.decode("utf-8")))
             text_display = str(data.decode("utf-8"))
 
-        cv2.putText(frame, text_display, (30, 30),
-                    cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 255, 0), 2)
+        #cv2.putText(frame, text_display, (30, 30), cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 255, 0), 2)
 
         cv2.namedWindow("Frame", cv2.WINDOW_KEEPRATIO)
         cv2.setWindowProperty("Frame", cv2.WND_PROP_ASPECT_RATIO, cv2.WINDOW_KEEPRATIO)
