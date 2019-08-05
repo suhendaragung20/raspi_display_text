@@ -55,7 +55,7 @@ def newConnections(socket):
 
 def main():
     # Get host and port
-    host = "192.168.43.183"
+    host = "192.168.43.150"
     port = 60000
 
     # Create new server socket

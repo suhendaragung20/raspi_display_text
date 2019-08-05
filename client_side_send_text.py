@@ -1,6 +1,8 @@
 import socket
 import threading
 import sys
+import cv2
+
 
 #Wait for incoming data from server
 #.decode is used to turn the message in bytes to a string
@@ -15,7 +17,7 @@ def receive(socket, signal):
             break
 
 #Get host and port
-host = "192.168.43.183"
+host = "192.168.43.150"
 port = 60000
 
 #Attempt connection to server
