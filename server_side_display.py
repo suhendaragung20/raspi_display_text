@@ -10,10 +10,9 @@ while True:
     key = cv2.waitKey(1) & 0xFF
 
     try:
-        file_text = open("display_text.txt")
-        for line in file_text:
-            text_display = line.strip().split()
-            text_display = text_display[0]
+        with open('display_text.txt', 'r') as file:
+            data = file.read().replace('\n', '')
+            text_display = str(data)
     except KeyboardInterrupt:
         break
     except:
