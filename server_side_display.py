@@ -1,21 +1,6 @@
-import socket
-import threading
+
 import cv2
 
-
-
-# Get host and port
-host = "192.168.43.150"
-port = 60000
-
-# Create new server socket
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.bind((host, port))
-sock.listen(5)
-
-sock_client, address_client = sock.accept()
-
-print("Connected with " + str(address_client))
 
 text_display = ""
 
