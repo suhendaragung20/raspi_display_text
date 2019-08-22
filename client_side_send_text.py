@@ -4,7 +4,7 @@ import sys
 
 
 #Get host and port
-host = "192.168.43.150"
+host = "10.14.3.249"
 port = 60000
 
 #Attempt connection to server
