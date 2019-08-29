@@ -20,6 +20,10 @@ while True:
 
     cv2.putText(frame, text_display, (30, 300), cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 255, 0), 10)
 
+    (rows, cols) = frame.shape[:2]
+    M = cv2.getRotationMatrix2D((cols / 2, rows / 2), 180, 1)
+    frame = cv2.warpAffine(frame, M, (cols, rows))
+
     cv2.namedWindow("Frame", cv2.WINDOW_KEEPRATIO)
     cv2.setWindowProperty("Frame", cv2.WND_PROP_ASPECT_RATIO, cv2.WINDOW_KEEPRATIO)
     cv2.setWindowProperty("Frame", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
