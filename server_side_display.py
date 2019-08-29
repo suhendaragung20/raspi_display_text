@@ -18,7 +18,7 @@ while True:
     except:
         continue
 
-    cv2.putText(frame, text_display, (30, 300), cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 255, 0), 10)
+    cv2.putText(frame, text_display, (30, 300), cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 0, 255), 10)
 
     (rows, cols) = frame.shape[:2]
     M = cv2.getRotationMatrix2D((cols / 2, rows / 2), 180, 1)
