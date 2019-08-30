@@ -20,8 +20,8 @@ while True:
 
     result = [x.strip() for x in text_display.split(',')]
     
-    cv2.putText(frame, result[0], (30, 300), cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 0, 0), 10)
-    cv2.putText(frame, result[1], (30, 700), cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 0, 0), 10)
+    cv2.putText(frame, result[0], (30, 350), cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 0, 0), 10)
+    cv2.putText(frame, result[1], (30, 600), cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 0, 0), 8)
 
     #print(text_display)
 
