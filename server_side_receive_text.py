@@ -25,9 +25,9 @@ while True:
         print("Client " + str(address_client) + " has disconnected")
         break
     if data != "":
-        print(str(data.decode("utf-8")))
+        //print(str(data.decode("utf-8")))
         text_display = str(data.decode("utf-8"))
-
+        
         f = open('display_text.txt', "w+")
         for i in range(1):
             f.write(text_display)
