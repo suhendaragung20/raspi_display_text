@@ -18,7 +18,10 @@ while True:
     except:
         continue
 
-    cv2.putText(frame, text_display, (30, 300), cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 0, 0), 10)
+    result = [x.strip() for x in text_display.split(',')]
+    
+    cv2.putText(frame, result[0], (30, 300), cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 0, 0), 10)
+    cv2.putText(frame, result[0], (70, 300), cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 0, 0), 10)
 
     #print(text_display)
 
