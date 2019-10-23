@@ -3,7 +3,7 @@ import cv2
 
 
 # Get host and port
-host = "192.168.43.150"
+host = "10.14.3.249"
 port = 60000
 
 # Create new server socket
@@ -48,7 +48,17 @@ while True:
     except:
         continue
 
-    cv2.putText(frame, text_display, (30, 300), cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 255, 0), 10)
+    result = [x.strip() for x in text_display.split(',')]
+
+    if len(result) > 1:
+        cv2.putText(frame, result[0], (30, 350), cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 0, 0), 10)
+        cv2.putText(frame, result[1], (30, 600), cv2.FONT_HERSHEY_SIMPLEX, 4, (0, 0, 0), 8)
+
+    # print(text_display)
+
+    (rows, cols) = frame.shape[:2]
+    M = cv2.getRotationMatrix2D((cols / 2, rows / 2), 180, 1)
+    frame = cv2.warpAffine(frame, M, (cols, rows))
 
     cv2.namedWindow("Frame", cv2.WINDOW_KEEPRATIO)
     cv2.setWindowProperty("Frame", cv2.WND_PROP_ASPECT_RATIO, cv2.WINDOW_KEEPRATIO)
